@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 自動化助理 - 首圖極致優化版</title>
+    <title>AI 自動化助理 - 中空字體程式碼版</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* 基礎重置，消除所有預設邊距 */
+        /* 基礎重置 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { 
             width: 100%; 
             height: 100%; 
-            overflow: hidden; /* 隱藏捲軸 */
+            overflow: hidden; 
             background-color: transparent; 
             font-family: 'Noto Sans TC', sans-serif; 
         }
 
-        /* --- 核心：完美 16:9 自適應外框 --- */
+        /* 核心：維持 16:9 比例不跑版 */
         .hero-wrapper {
-            /* 讓這個區塊永遠保持 16:9 比例，並自動在 iframe 內置中縮放 */
             width: 100vw; 
             height: 56.25vw; 
             max-height: 100vh; 
@@ -29,15 +28,13 @@
             margin: auto;
             position: absolute;
             top: 0; bottom: 0; left: 0; right: 0;
-            
-            /* 啟動容器查詢，所有 cqw 單位都會依據這個完美比例的寬度計算 */
             container-type: inline-size;
             background-color: #0B111A;
             overflow: hidden;
             color: #ffffff;
         }
 
-        /* --- 右上角 Logo --- */
+        /* 右上角 Logo */
         .logo-area {
             position: absolute;
             top: 6cqw;
@@ -50,16 +47,16 @@
         .logo-icon { font-size: 2.5cqw; line-height: 0.8; }
         .logo-text { font-size: 1.1cqw; font-weight: 700; line-height: 1.2; letter-spacing: 0.1cqw; }
 
-        /* --- 左側內容區 (改用 Flexbox 避免重疊) --- */
+        /* 左側內容區 */
         .content-left {
             position: absolute;
             left: 6cqw;
             top: 0;
-            width: 55cqw; /* 限制寬度，避免撞到右側圖片 */
-            height: 100%; /* 撐滿高度 */
+            width: 55cqw; 
+            height: 100%; 
             display: flex;
-            flex-direction: column; /* 讓內容由上往下排 */
-            justify-content: center; /* 讓整個內容在垂直方向完美置中 */
+            flex-direction: column; 
+            justify-content: center; 
             z-index: 2;
         }
 
@@ -71,7 +68,6 @@
             margin-bottom: 2cqw;
         }
 
-        /* 標題區塊：嚴格限制不換行 */
         .title-line-1 {
             font-size: 4.2cqw;
             font-weight: 900;
@@ -80,14 +76,15 @@
             margin-bottom: 0.5cqw;
         }
 
+        /* ✨ 關鍵修改：文字外框中空效果 */
         .title-line-2 {
-            font-size: 7.2cqw;
-            font-weight: 900;
+            font-size: 7.5cqw;
+            font-weight: 900; /* 粗體 */
             letter-spacing: 0.4cqw;
-            color: transparent;
-            -webkit-text-stroke: 0.15cqw #E88349; /* 橘色簍空外框 */
+            color: transparent; /* 內部透明中空 */
+            -webkit-text-stroke: 0.2cqw #E88349; /* 橘色外框線 */
             white-space: nowrap;
-            margin-bottom: 1.5cqw;
+            margin-bottom: 2cqw;
             line-height: 1.1;
         }
 
@@ -105,7 +102,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-left: 20cqw; /* 將區塊往右推，對齊設計圖 */
+            margin-left: 20cqw; 
         }
 
         .author-name-box {
@@ -126,7 +123,7 @@
             white-space: nowrap;
         }
 
-        /* --- 右側人物預留區塊 --- */
+        /* 右側人物預留區塊 */
         .hero-image-container {
             position: absolute;
             bottom: 0;
@@ -180,7 +177,9 @@
             </div>
 
             <div class="title-line-1">用AI建立零成本高效</div>
+            
             <div class="title-line-2">自動化助理</div>
+            
             <div class="sub-title">不藏私帶你落地執行客製化做出自己的「自動化系統」</div>
 
             <div class="author-info">
